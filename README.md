@@ -1,0 +1,1 @@
+Discord Bot that utilizes Giphy's API.
