@@ -2,8 +2,23 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 const GphApiClient  = require('giphy-js-sdk-core');
+const http = require('http');
+const express = require('express');
+const app = express();
 
-giphy = GphApiClient(config.giphy_token)
+require('dotenv').config();
+
+giphy = GphApiClient(process.env.GIPHY_TOKEN)
+
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping Received");
+  response.sendStatus(200);
+});
+
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}/`);
+}, 280000);
 
 client.on("ready", () => {
   console.log("I am ready!");
