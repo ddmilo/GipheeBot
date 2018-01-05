@@ -30,8 +30,8 @@ client.on("message", (message) => {
 
   if(message.content.startsWith(config.prefix)) {
     let tag = message.content.slice(config.prefix.length).trim().split(/ +/g)
-    if(tag == "help"){
-      message.channel.send("Type '!g' followed by a <tag>. ");      
+    if(tag == "help" || tag == ''){
+      message.channel.send("Type '!g' followed by a <tag>. Multiple tags must be separated by a '-'. ");      
     }
     else    
       giphy.random('gifs', {tag})
