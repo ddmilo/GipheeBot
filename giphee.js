@@ -17,7 +17,7 @@ app.get("/", (request, response) => {
 
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}/`);
+  http.get('https://serene-lake-26731.herokuapp.com/');
 }, 280000);
 
 client.on("ready", () => {
@@ -35,7 +35,7 @@ client.on("message", (message) => {
     else    
       giphy.random('gifs', {tag})
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           message.channel.send(res.data.url);        
         })
   }
