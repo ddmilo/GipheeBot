@@ -16,8 +16,9 @@ app.get("/", (request, response) => {
 });
 
 app.listen(process.env.PORT);
+
 setInterval(() => {
-  http.get('https://serene-lake-26731.herokuapp.com/');
+  http.get(`http://${process.env.PROJECT_DOMAIN}`);
 }, 280000);
 
 client.on("ready", () => {
