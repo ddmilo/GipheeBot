@@ -7,9 +7,10 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-  if(message.content.startsWith("ping")) {
+  if(message.content.startsWith(config.prefix)) {
     message.channel.send("pong!");
   }
 });
 
 client.login(config.token);
+
