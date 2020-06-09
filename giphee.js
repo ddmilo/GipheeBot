@@ -17,10 +17,6 @@ app.get("/", (request, response) => {
 
 app.listen(process.env.PORT);
 
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}`);
-}, 280000);
-
 client.on("ready", () => {
   console.log("I am ready!");
 });
