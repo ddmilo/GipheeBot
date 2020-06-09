@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node giphee.js"
   },
-  "engines": { "node": "9.2.0" },
+  "engines": {
+    "node": "9.2.0"
+  },
   "keywords": [],
   "author": "ddmilo",
   "license": "MIT",
@@ -18,5 +20,3 @@
     "giphy-js-sdk-core": "^1.0.2"
   }
 }
-
-
