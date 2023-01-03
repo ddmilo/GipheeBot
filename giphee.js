@@ -1,10 +1,12 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const { Client, GatewayIntentBits } = require('discord.js');
 const config = require("./config.json");
 const GphApiClient  = require('giphy-js-sdk-core');
 const http = require('http');
 const express = require('express');
 const app = express();
+
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
 require('dotenv').config();
 
@@ -25,7 +27,7 @@ client.on("ready", () => {
   console.log("I am ready!");
 });
 
-client.on("message", (message) => {
+client.on("messageCreate", (message) => {
   
 
   if(message.content.startsWith(config.prefix)) {
